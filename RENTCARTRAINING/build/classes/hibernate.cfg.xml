@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                             "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory >
+ <!-- connection Oracle -->
+  <!--
+	<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	<property name="connection.url">jdbc:oracle:thin:local@host:1521/xe</property>
+	<property name="connection.username">ted</property>
+	<property name="connection.password">root</property>
+	<property name="dialect">org.hibernate.dialect.OracleDialect</property>-->
+ <!-- connection Mysql -->
+	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name="connection.password"></property>
+	<property name="connection.url">jdbc:mysql://localhost/car</property>
+	<property name="connection.username">root</property>
+	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	<property name="current_session_context_class">thread</property>
+	<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+	<property name="connection.pool_size">1</property>
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property> 
+	 <!-- connection ended -->
+	<mapping class="com.carrent.entities.Employe"/>
+	<mapping class="com.carrent.entities.user_login"/>
+	<mapping class="com.carrent.entities.CarModel"/>
+	<mapping class="com.carrent.entities.CarBrand"/>
+	<mapping class="com.carrent.entities.CarName"/>
+ </session-factory>
+</hibernate-configuration>
